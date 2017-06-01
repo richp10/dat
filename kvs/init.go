@@ -1,6 +1,8 @@
 package kvs
 
-import logxi "github.com/mgutz/logxi/v1"
+import (
+	logxi "github.com/mgutz/logxi/v1"
+)
 
 var logger logxi.Logger
 
