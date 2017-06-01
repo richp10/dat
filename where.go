@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"gopkg.in/mgutz/dat.v1/common"
+	"gopkg.in/Janulka/dat.v1/common"
 )
 
 // Eq is a map column -> value pairs which must be matched in a query

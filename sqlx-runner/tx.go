@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/jmoiron/sqlx"
-	"gopkg.in/mgutz/dat.v1"
+	"gopkg.in/Janulka/dat.v1"
 )
 
 const (

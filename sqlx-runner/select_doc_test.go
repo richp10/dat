@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/mgutz/jo/v1"
-	"gopkg.in/mgutz/dat.v1"
+	"github.com/Janulka/jo/v1"
+	"gopkg.in/Janulka/dat.v1"
 	"gopkg.in/stretchr/testify.v1/assert"
 )
 

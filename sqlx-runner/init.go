@@ -5,10 +5,10 @@ import (
 	"time"
 
 	"github.com/cenkalti/backoff"
-	logxi "github.com/mgutz/logxi/v1"
-	"gopkg.in/mgutz/dat.v1"
-	"gopkg.in/mgutz/dat.v1/kvs"
-	"gopkg.in/mgutz/dat.v1/postgres"
+	logxi "github.com/Janulka/logxi/v1"
+	"gopkg.in/Janulka/dat.v1"
+	"gopkg.in/Janulka/dat.v1/kvs"
+	"gopkg.in/Janulka/dat.v1/postgres"
 )
 
 var logger logxi.Logger

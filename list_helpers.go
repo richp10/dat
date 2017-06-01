@@ -1,7 +1,7 @@
 package dat
 
 import (
-	"gopkg.in/mgutz/dat.v1/common"
+	"gopkg.in/Janulka/dat.v1/common"
 )
 
 var bufPool = common.NewBufferPool()

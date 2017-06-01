@@ -1,6 +1,6 @@
 package runner
 
-import "gopkg.in/mgutz/dat.v1"
+import "gopkg.in/Janulka/dat.v1"
 
 func benchReset() {
 	var sql = `

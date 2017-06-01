@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/jmoiron/sqlx"
-	"gopkg.in/mgutz/dat.v1"
+	"gopkg.in/Janulka/dat.v1"
 )
 
 // Queryable is an object that can be queried.

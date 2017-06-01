@@ -7,11 +7,11 @@ import (
 	"os"
 	"time"
 
-	logxi "github.com/mgutz/logxi/v1"
+	logxi "github.com/Janulka/logxi/v1"
 
-	"gopkg.in/mgutz/dat.v1"
-	"gopkg.in/mgutz/dat.v1/kvs"
-	"gopkg.in/mgutz/dat.v1/postgres"
+	"gopkg.in/Janulka/dat.v1"
+	"gopkg.in/Janulka/dat.v1/kvs"
+	"gopkg.in/Janulka/dat.v1/postgres"
 )
 
 var testDB *DB

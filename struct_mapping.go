@@ -3,9 +3,9 @@ package dat
 import (
 	"fmt"
 	"reflect"
-	"github.com/mgutz/str"
+	"github.com/Janulka/str"
 
-	"gopkg.in/mgutz/dat.v1/reflectx"
+	"gopkg.in/Janulka/dat.v1/reflectx"
 )
 
 var fieldMapper = reflectx.NewMapperTagFunc("db", nil, nil)

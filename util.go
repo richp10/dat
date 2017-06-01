@@ -11,9 +11,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/mgutz/str"
+	"github.com/Janulka/str"
 
-	"gopkg.in/mgutz/dat.v1/common"
+	"gopkg.in/Janulka/dat.v1/common"
 )
 
 // NameMapping is the routine to use when mapping column names to struct properties
