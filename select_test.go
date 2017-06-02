@@ -5,7 +5,7 @@ import (
 
 	"gopkg.in/stretchr/testify.v1/assert"
 
-	"github.com/Janulka/str"
+	"github.com/mgutz/str"
 )
 
 func BenchmarkSelectBasicSql(b *testing.B) {

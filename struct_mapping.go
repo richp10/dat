@@ -3,7 +3,7 @@ package dat
 import (
 	"fmt"
 	"reflect"
-	"github.com/Janulka/str"
+	"github.com/mgutz/str"
 
 	"gopkg.in/Janulka/dat.v1/reflectx"
 )
