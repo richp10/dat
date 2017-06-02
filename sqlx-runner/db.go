@@ -4,7 +4,7 @@ import (
 	"database/sql"
 
 	"github.com/jmoiron/sqlx"
-	"gopkg.in/Janulka/dat.v1"
+	"github.com/Janulka/dat"
 )
 
 // DB represents an abstract database connection pool.

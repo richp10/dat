@@ -1,6 +1,6 @@
 package dat
 
-import "gopkg.in/Janulka/dat.v1/common"
+import "github.com/Janulka/dat/common"
 
 // Expression holds a sub expression.
 type Expression struct {

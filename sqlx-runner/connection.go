@@ -1,6 +1,6 @@
 package runner
 
-import "gopkg.in/Janulka/dat.v1"
+import "github.com/Janulka/dat"
 
 // Connection is a queryable connection and represents a DB or Tx.
 type Connection interface {

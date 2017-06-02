@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/jmoiron/sqlx"
-	"gopkg.in/Janulka/dat.v1"
+	"github.com/Janulka/dat"
 )
 
 // Execer executes queries against a database.

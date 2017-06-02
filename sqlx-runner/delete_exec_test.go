@@ -3,7 +3,7 @@ package runner
 import (
 	"testing"
 
-	"gopkg.in/Janulka/dat.v1"
+	"github.com/Janulka/dat"
 	"gopkg.in/stretchr/testify.v1/assert"
 )
 

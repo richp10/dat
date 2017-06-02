@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"gopkg.in/Janulka/dat.v1"
+	"github.com/Janulka/dat"
 	"gopkg.in/stretchr/testify.v1/assert"
 
 	"github.com/Janulka/jo/v1"
