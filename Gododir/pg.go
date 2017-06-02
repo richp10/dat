@@ -7,8 +7,8 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"gopkg.in/mgutz/ansi"
-	"gopkg.in/mgutz/str"
+	"github.com/mgutz/ansi"
+	"github.com/mgutz/str"
 	do "gopkg.in/godo.v2"
 	"gopkg.in/godo.v2/util"
 	"github.com/Janulka/dat"

@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"gopkg.in/mgutz/str"
+	"github.com/mgutz/str"
 
 	"gopkg.in/stretchr/testify.v1/assert"
 )

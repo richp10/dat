@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"gopkg.in/mgutz/str"
+	"github.com/mgutz/str"
 
 	"github.com/Janulka/dat/common"
 )
