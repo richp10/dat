@@ -3,11 +3,8 @@ package dat
 import (
 	"fmt"
 	"strconv"
-
-	logxi "github.com/mgutz/logxi/v1"
 )
 
-var logger logxi.Logger
 
 // Strict tells dat to raise errors
 var Strict = false
@@ -53,5 +50,4 @@ func init() {
 		identifierTab[i] = fmt.Sprintf("dat%d", i)
 	}
 
-	logger = logxi.New("dat")
 }

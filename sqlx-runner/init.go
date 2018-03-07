@@ -5,13 +5,11 @@ import (
 	"time"
 
 	"github.com/cenkalti/backoff"
-	logxi "github.com/mgutz/logxi/v1"
+	log "github.com/sirupsen/logrus"
 	"github.com/richp10/dat"
 	"github.com/richp10/dat/kvs"
 	"github.com/richp10/dat/postgres"
 )
-
-var logger logxi.Logger
 
 // LogQueriesThreshold is the threshold for logging "slow" queries
 var LogQueriesThreshold time.Duration
@@ -21,7 +19,6 @@ var LogErrNoRows bool
 
 func init() {
 	dat.Dialect = postgres.New()
-	logger = logxi.New("dat:sqlx")
 }
 
 // Cache caches query results.
@@ -44,7 +41,7 @@ func MustPing(db *sql.DB) {
 	// so operations that take a while to fail could run in quick succession.
 	for range ticker.C {
 		if err = db.Ping(); err != nil {
-			logger.Info("pinging database...", err.Error())
+			log.Info("pinging database...", err.Error())
 			continue
 		}
 

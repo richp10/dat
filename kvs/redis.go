@@ -2,7 +2,7 @@ package kvs
 
 import (
 	"time"
-
+	logger "github.com/sirupsen/logrus"
 	"github.com/garyburd/redigo/redis"
 )
 

@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
+	logger "github.com/sirupsen/logrus"
 	"github.com/jmoiron/sqlx"
 	"github.com/lib/pq"
 	guid "github.com/satori/go.uuid"
@@ -66,20 +66,27 @@ func logSQLError(err error, msg string, statement string, args []interface{}) er
 			return err
 		}
 		if dat.Strict {
-			return logger.Warn(msg, "err", err, "sql", statement, "args", toOutputStr(args))
+			// maybe improve logging here..
+			//return logger.Warn(msg, "err", err, "sql", statement, "args", toOutputStr(args))
+			logger.Warn(msg)
+			return errors.New(msg)
 		}
-		if logger.IsDebug() {
+		// TODO FIX - think we sort this at higher level
+		//if logger.DebugLevel= {
 			logger.Debug(msg, "err", err, "sql", statement, "args", toOutputStr(args))
-		}
+		//}
 		return err
 	}
 
-	return logger.Error(msg, "err", err, "sql", statement, "args", toOutputStr(args))
+	//return logger.Error(msg, "err", err, "sql", statement, "args", toOutputStr(args))
+	logger.Warn(msg)
+	return errors.New(msg)
 }
 
 func logExecutionTime(start time.Time, sql string, args []interface{}) {
-	logged := false
-	if logger.IsWarn() {
+	//logged := false
+	//TODO TIDY
+	//if logger.IsWarn() {
 		elapsed := time.Since(start)
 		if LogQueriesThreshold > 0 && elapsed.Nanoseconds() > LogQueriesThreshold.Nanoseconds() {
 			if len(args) > 0 {
@@ -87,14 +94,14 @@ func logExecutionTime(start time.Time, sql string, args []interface{}) {
 			} else {
 				logger.Warn("SLOW query", "elapsed", fmt.Sprintf("%s", elapsed), "sql", sql)
 			}
-			logged = true
+			//logged = true
 		}
-	}
+	//}
 
-	if logger.IsInfo() && !logged {
-		elapsed := time.Since(start)
+	//if logger.IsInfo() && !logged {
+	//	elapsed := time.Since(start)
 		logger.Info("Query time", "elapsed", fmt.Sprintf("%s", elapsed), "sql", sql)
-	}
+	//}
 }
 
 func (ex *Execer) exec() (sql.Result, error) {
@@ -124,7 +131,11 @@ func (ex *Execer) exec() (sql.Result, error) {
 func (ex *Execer) execFn() (sql.Result, error) {
 	fullSQL, args, err := ex.Interpolate()
 	if err != nil {
-		return nil, logger.Error("execFn.10", "err", err, "sql", fullSQL)
+		//return nil, logger.Error("execFn.10", "err", err, "sql", fullSQL)
+
+		// maybe improve logging here
+		logger.Warn("execFn.10")
+		return nil, errors.New("execFn.10")
 	}
 	defer logExecutionTime(time.Now(), fullSQL, args)
 

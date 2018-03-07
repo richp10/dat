@@ -3,6 +3,7 @@ package dat
 import (
 	"reflect"
 	"strconv"
+	logger "github.com/sirupsen/logrus"
 )
 
 // UpdateBuilder contains the clauses for an UPDATE statement

@@ -1,6 +1,9 @@
 package dat
 
-import "reflect"
+import (
+	"reflect"
+	logger "github.com/sirupsen/logrus"
+)
 
 // InsectBuilder inserts or selects an existing row when executed.
 //

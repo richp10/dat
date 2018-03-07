@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/mgutz/str"
-
+	logger "github.com/sirupsen/logrus"
 	"github.com/richp10/dat/common"
 )
 

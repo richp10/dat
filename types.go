@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"errors"
 	"time"
-
+	logger "github.com/sirupsen/logrus"
 	"github.com/lib/pq"
 )
 
@@ -182,14 +182,17 @@ func (n *NullTime) UnmarshalJSON(b []byte) error {
 	}
 
 	s := string(b)
-	s = s[1 : len(s)-1]
+	s = s[1: len(s)-1]
 	for _, format := range formats {
 		t, err := time.Parse(format, s)
 		if err == nil {
 			return n.Scan(t)
 		}
 	}
-	return logger.Error("Cannot parse time", "time", s, "formats", formats)
+	// Todo maybe improve logging
+	//return logger.Error("Cannot parse time", "time", s, "formats", formats)
+	logger.Error("Cannot parse time")
+	return errors.New("cannot parse time")
 }
 
 // UnmarshalJSON correctly deserializes a NullBool from JSON

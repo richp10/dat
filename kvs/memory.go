@@ -2,7 +2,7 @@ package kvs
 
 import (
 	"time"
-
+	logger "github.com/sirupsen/logrus"
 	gocache "github.com/pmylund/go-cache"
 )
 

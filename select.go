@@ -1,5 +1,8 @@
 package dat
 
+
+import logger "github.com/sirupsen/logrus"
+
 // SelectBuilder contains the clauses for a SELECT statement
 type SelectBuilder struct {
 	Execer

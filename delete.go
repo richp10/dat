@@ -1,5 +1,7 @@
 package dat
 
+import logger "github.com/sirupsen/logrus"
+
 // DeleteBuilder contains the clauses for a DELETE statement
 type DeleteBuilder struct {
 	Execer

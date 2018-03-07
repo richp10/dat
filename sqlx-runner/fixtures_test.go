@@ -1,6 +1,9 @@
 package runner
 
-import "github.com/richp10/dat"
+import (
+	logger "github.com/sirupsen/logrus"
+	"github.com/richp10/dat"
+)
 
 type Team struct {
 	ID        int64  `db:"id"`

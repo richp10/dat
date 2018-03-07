@@ -2,14 +2,14 @@ package runner
 
 import (
 	"database/sql"
-
+	logger "github.com/sirupsen/logrus"
 	"github.com/jmoiron/sqlx"
 	"github.com/richp10/dat"
 )
 
 // DB represents an abstract database connection pool.
 type DB struct {
-	DB *sqlx.DB
+	DB      *sqlx.DB
 	*Queryable
 	Version int64
 }

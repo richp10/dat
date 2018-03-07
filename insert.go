@@ -3,6 +3,7 @@ package dat
 import (
 	"bytes"
 	"reflect"
+	logger "github.com/sirupsen/logrus"
 )
 
 // InsertBuilder contains the clauses for an INSERT statement

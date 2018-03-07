@@ -1,5 +1,7 @@
 package dat
 
+import logger "github.com/sirupsen/logrus"
+
 // CallBuilder is a store procedure call builder.
 type CallBuilder struct {
 	Execer

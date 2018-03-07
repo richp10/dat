@@ -1,5 +1,7 @@
 package dat
 
+import logger "github.com/sirupsen/logrus"
+
 type subInfo struct {
 	*Expression
 	alias string

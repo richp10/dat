@@ -1,6 +1,9 @@
 package dat
 
-import "reflect"
+import (
+	"reflect"
+	logger "github.com/sirupsen/logrus"
+)
 
 // UpsertBuilder contains the clauses for an INSERT statement
 type UpsertBuilder struct {

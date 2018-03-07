@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"hash/fnv"
-
+	logger "github.com/sirupsen/logrus"
 	"github.com/richp10/dat"
 )
 

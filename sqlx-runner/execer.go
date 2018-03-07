@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
-
+	logger "github.com/sirupsen/logrus"
 	"github.com/jmoiron/sqlx"
 	"github.com/richp10/dat"
 )

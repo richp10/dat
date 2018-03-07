@@ -8,6 +8,8 @@ import (
 	"strings"
 	"time"
 	"unicode/utf8"
+	logger "github.com/sirupsen/logrus"
+	"github.com/pkg/errors"
 )
 
 func isUint(k reflect.Kind) bool {
@@ -61,7 +63,10 @@ func Interpolate(sql string, vals []interface{}) (string, []interface{}, error) 
 	// Args with a blank query is an error
 	if sql == "" {
 		if lenVals != 0 {
-			return "", nil, logger.Error("Interpolation error", "err", ErrArgumentMismatch, "sql", sql, "args", vals)
+			// Todo - better logging of these errors
+			//return "", nil, logger.Error("Interpolation error", "err", ErrArgumentMismatch, "sql", sql, "args", vals)
+			logger.Error("Interpolation error 1")
+			return "", nil, errors.New("Interpolation error")
 		}
 		return "", nil, nil
 	}
@@ -73,13 +78,17 @@ func Interpolate(sql string, vals []interface{}) (string, []interface{}, error) 
 		// No args for a query with place holders is an error
 		if lenVals == 0 {
 			if hasPlaceholders {
-				return "", nil, logger.Error("Interpolation error", "err", ErrArgumentMismatch, "sql", sql, "args", vals)
+				logger.Error("Interpolation error 2")
+				//return "", nil, logger.Error("Interpolation error", "err", ErrArgumentMismatch, "sql", sql, "args", vals)
+				return "", nil, errors.New("Interpolation error")
 			}
 			return sql, nil, nil
 		}
 
 		if lenVals > 0 && !hasPlaceholders {
-			return "", nil, logger.Error("Interpolation error", "err", ErrArgumentMismatch, "sql", sql, "args", vals)
+			logger.Error("Interpolation error 2")
+			// logger.Error("Interpolation error", "err", ErrArgumentMismatch, "sql", sql, "args", vals)
+			return "", nil, errors.New("Interpolation error")
 		}
 
 		if !hasPlaceholders {
