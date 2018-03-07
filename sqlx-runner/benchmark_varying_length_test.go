@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/Janulka/dat"
+	"github.com/richp10/dat"
 )
 
 // These benchmarks compare the total cost of interpolating the SQL then

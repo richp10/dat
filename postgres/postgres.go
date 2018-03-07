@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Janulka/dat/common"
+	"github.com/richp10/dat/common"
 )
 
 // pgDollarTag is the double dollar tag for escaping strings.

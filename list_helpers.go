@@ -1,7 +1,7 @@
 package dat
 
 import (
-	"github.com/Janulka/dat/common"
+	"github.com/richp10/dat/common"
 )
 
 var bufPool = common.NewBufferPool()
