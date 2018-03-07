@@ -1,0 +1,36 @@
+[[constraint]]
+  name = "github.com/cenkalti/backoff"
+
+[[constraint]]
+  name = "github.com/garyburd/redigo"
+
+[[constraint]]
+  name = "github.com/jmoiron/sqlx"
+
+[[constraint]]
+  name = "github.com/lib/pq"
+
+[[constraint]]
+  name = "github.com/mgutz/ansi"
+
+[[constraint]]
+  name = "github.com/mgutz/jo"
+
+[[constraint]]
+  name = "github.com/mgutz/str"
+
+[[constraint]]
+  name = "github.com/pmylund/go-cache"
+
+[[constraint]]
+  name = "github.com/satori/go.uuid"
+  version = "v1.1.0"
+
+[[constraint]]
+  name = "gopkg.in/godo.v2"
+
+[[constraint]]
+  name = "gopkg.in/stretchr/testify.v1"
+
+[[constraint]]
+  name = "github.com/sirupsen/logrus"
