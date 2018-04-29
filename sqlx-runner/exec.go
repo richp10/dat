@@ -90,9 +90,9 @@ func logExecutionTime(start time.Time, sql string, args []interface{}) {
 		elapsed := time.Since(start)
 		if LogQueriesThreshold > 0 && elapsed.Nanoseconds() > LogQueriesThreshold.Nanoseconds() {
 			if len(args) > 0 {
-				logger.Warn("SLOW query", "elapsed", fmt.Sprintf("%s", elapsed), "sql", sql, "args", toOutputStr(args))
+				logger.Debug("SLOW query ", "elapsed: ", fmt.Sprintf("%s", elapsed), "sql", sql, "args", toOutputStr(args))
 			} else {
-				logger.Warn("SLOW query", "elapsed", fmt.Sprintf("%s", elapsed), "sql", sql)
+				logger.Debug("SLOW query ", "elapsed: ", fmt.Sprintf("%s", elapsed), "sql", sql)
 			}
 			//logged = true
 		}
@@ -100,7 +100,7 @@ func logExecutionTime(start time.Time, sql string, args []interface{}) {
 
 	//if logger.IsInfo() && !logged {
 	//	elapsed := time.Since(start)
-		logger.Info("Query time", "elapsed", fmt.Sprintf("%s", elapsed), "sql", sql)
+		logger.Debug("Query time ", "elapsed: ", fmt.Sprintf("%s", elapsed), "sql", sql)
 	//}
 }
 
@@ -134,8 +134,8 @@ func (ex *Execer) execFn() (sql.Result, error) {
 		//return nil, logger.Error("execFn.10", "err", err, "sql", fullSQL)
 
 		// maybe improve logging here
-		logger.Warn("execFn.10")
-		return nil, errors.New("execFn.10")
+		logger.Info("Exec - no data to be returned: ", err)
+		return nil, errors.New("exec - no data to be returned: execFn.10")
 	}
 	defer logExecutionTime(time.Now(), fullSQL, args)
 
@@ -526,7 +526,7 @@ func (ex *Execer) queryJSONBlobFn(single bool) ([]byte, error) {
 			if i == 1 {
 				if dat.Strict {
 					logSQLError(errors.New("Multiple results returned"), "Expected single result", fullSQL, args)
-					logger.Fatal("Expected single result, got many")
+					logger.Error("Expected single result, got many")
 				} else {
 					break
 				}

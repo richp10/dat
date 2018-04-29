@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/cenkalti/backoff"
-	log "github.com/sirupsen/logrus"
+	logger "github.com/sirupsen/logrus"
 	"github.com/richp10/dat"
 	"github.com/richp10/dat/kvs"
 	"github.com/richp10/dat/postgres"
@@ -41,7 +41,7 @@ func MustPing(db *sql.DB) {
 	// so operations that take a while to fail could run in quick succession.
 	for range ticker.C {
 		if err = db.Ping(); err != nil {
-			log.Info("pinging database...", err.Error())
+			logger.Warn("pinging database...", err.Error())
 			continue
 		}
 
